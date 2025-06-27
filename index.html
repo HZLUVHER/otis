@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f7;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            top: -10%;
+            transform: translateY(0);
+            animation: falling 8s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-10%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        .couple-animation {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        .couple-animation img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff6b8b;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Birthday Message */
+        .birthday-message {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .birthday-message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .birthday-message::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            width: 50px;
+            height: 20px;
+            background-color: #ff9eb5;
+            border-radius: 50%;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
+
+        .typewriter {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            min-height: 300px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: #ff6b8b;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Cute Things Section */
+        .cute-things {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cute-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .cute-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .cute-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #ff6b8b;
+        }
+
+        .cute-text {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Reasons I Love You */
+        .reasons-list {
+            list-style-type: none;
+            margin-top: 40px;
+        }
+
+        .reason-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .reason-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reason-item:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .reason-item:nth-child(even).visible {
+            transform: translateX(0);
+        }
+
+        .reason-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #ff6b8b;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* Final Message */
+        .final-message {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 20px;
+            color: white;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-message h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .final-message p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+            animation: explode 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .birthday-message, .final-message {
+                padding: 30px 20px;
+            }
+            
+            .final-message h2 {
+                font-size: 2.2rem;
+            }
+            
+            .couple-animation {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .couple-animation {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .typewriter {
+                min-height: 400px;
+            }
+            
+            .cute-things {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Animation -->
+    <header>
+        <div class="couple-animation">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmw5bnR4c3JzdG53d3I3bXE4ODJzaGlmNW1sN3Vka211OHFibWdtYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT0GqFhyNd0Wmfo6sM/giphy.gif" alt="Heart animation">
+        </div>
+        <h1>Happy Birthday My Love 💖</h1>
+        <div class="scroll-down">Scroll down for your surprise</div>
+    </header>
+
+    <!-- Birthday Message Section -->
+    <section id="birthday-message">
+        <h2>A Letter Just For You</h2>
+        <div class="birthday-message">
+            <div class="typewriter" id="typewriter-text"></div>
+        </div>
+    </section>
+
+    <!-- Cute Things Section -->
+    <section id="cute-things">
+        <h2>Things That Remind Me Of You</h2>
+        <div class="cute-things">
+            <div class="cute-item">
+                <div class="cute-icon">🌙</div>
+                <div class="cute-text">The moon we both look at</div>
+            </div>
+            <div class="cute-item">
+                <div class="cute-icon">☕</div>
+                <div class="cute-text">Morning coffee dates</div>
+            </div>
+            <div class="cute-item">
+                <div class="cute-icon">📱</div>
+                <div class="cute-text">Our endless texts</div>
+            </div>
+            <div class="cute-item">
+                <div class="cute-icon">🎶</div>
+                <div class="cute-text">Songs we share</div>
+            </div>
+            <div class="cute-item">
+                <div class="cute-icon">⏰</div>
+                <div class="cute-text">Counting time zones</div>
+            </div>
+            <div class="cute-item">
+                <div class="cute-icon">💌</div>
+                <div class="cute-text">Love letters sent</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons I Love You Section -->
+    <section id="reasons">
+        <h2>20 Reasons Why I Love You (Even From Afar)</h2>
+        <ul class="reasons-list">
+            <li class="reason-item">
+                <span class="reason-icon">🌍</span>
+                <span>You make distance feel temporary and love feel permanent</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">⏳</span>
+                <span>You're worth every second we wait to finally meet</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">💬</span>
+                <span>Our late-night calls where we talk about everything and nothing</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🎮</span>
+                <span>How we find ways to connect, even through games and movies</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">📅</span>
+                <span>The way we dream about the day we'll finally be together</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🌅</span>
+                <span>How we describe our worlds to each other so vividly</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🎁</span>
+                <span>The surprise packages you send just because</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">😴</span>
+                <span>Falling asleep on call together when we're both exhausted</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🗺️</span>
+                <span>How we dream and plan our future together</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🤳</span>
+                <span>Your silly selfies that brighten my toughest days</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🎵</span>
+                <span>Creating playlists for each other across the miles</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">✈️</span>
+                <span>The way your face lights up when I arrive at the airport</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">💪</span>
+                <span>Your strength in making this distance work between us</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🤝</span>
+                <span>How we've built trust that bridges any distance</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">📸</span>
+                <span>Our photo albums filled with memories between visits</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">❤️</span>
+                <span>The way "I miss you" means "I love you" even more</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🎭</span>
+                <span>Our inside jokes that no one else would understand</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🧠</span>
+                <span>How you remember little details about me</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🤗</span>
+                <span>Your virtual hugs that somehow feel real</span>
+            </li>
+            <li class="reason-item">
+                <span class="reason-icon">🏰</span>
+                <span>Building our love strong enough to span any distance</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Final Message Section -->
+    <section>
+        <div class="final-message" id="final-message">
+            <h2>My Eternal Love</h2>
+            <p>Every mile between us is worth it because it leads me back to you. Happy birthday to the woman who makes my heart feel at home no matter where I am. I can't wait to close this distance forever. I love you more than all the stars we can't see together yet. 💫</p>
+        </div>
+    </section>
+
+    <!-- Hidden Audio for Background Music -->
+    <audio id="bg-music" loop autoplay>
+        <source src="https://res.cloudinary.com/dku0zk7e1/video/upload/v1751047806/hehe_ur684v.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript for animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create floating hearts
+            function createHearts() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 8000);
+            }
+            
+            setInterval(createHearts, 300);
+            
+            // Typewriter effect for birthday message
+            const birthdayMessage = `My dearest love,
+
+Happy birthday to the most incredible woman I've ever known. As I write this, I'm thinking about how even though there are miles between us, I've never felt closer to anyone in my life. 
+
+These months of long distance have shown me what real love is. It's saving every little moment from my day to tell you about later. It's counting down the days until I can hold you again, while simultaneously treasuring every call, every text, every pixelated smile.
+
+I want you to know something today: You're worth every difficult moment this distance brings. Worth every lonely night, every missed event, every "I wish you were here." Because when we're together, all that fades away and all that's left is this perfect feeling of belonging that I've only ever found with you.
+
+Today, on your birthday, I hope you feel how loved you are. How cherished. How desperately I wish I could be there to celebrate you properly. But since I can't, I made this little website to remind you of all the reasons you're so special to me.
+
+The distance will end, my love. But what we have? That's forever. Happy birthday to the woman who holds my heart across any distance. I love you more than these words can say. 💕
+
+Always yours,
+Abdelrahman`;
+            const typewriterElement = document.getElementById('typewriter-text');
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < birthdayMessage.length) {
+                    typewriterElement.innerHTML += birthdayMessage.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, Math.random() * 30 + 20);
+                } else {
+                    typewriterElement.innerHTML += '<span class="cursor"></span>';
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+            
+            // Autoplay music (Billie Eilish - replace with actual song URL)
+            const bgMusic = document.getElementById('bg-music');
+            
+            // Enable autoplay after user interaction
+            document.body.addEventListener('click', function() {
+                bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+            }, { once: true });
+            
+            // Scroll animations
+            function checkScroll() {
+                const birthdayMessageElement = document.querySelector('.birthday-message');
+                const reasonItems = document.querySelectorAll('.reason-item');
+                const finalMessage = document.getElementById('final-message');
+                
+                // Birthday message animation
+                if (isElementInViewport(birthdayMessageElement)) {
+                    birthdayMessageElement.classList.add('visible');
+                }
+                
+                // Reasons animation
+                reasonItems.forEach((item, index) => {
+                    if (isElementInViewport(item)) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+                
+                // Final message fireworks
+                if (finalMessage && isElementInViewport(finalMessage) && !finalMessage.hasFireworks) {
+                    finalMessage.hasFireworks = true;
+                    createFireworks(finalMessage);
+                }
+            }
+            
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on load
+            
+            // Fireworks animation
+            function createFireworks(container) {
+                const colors = ['#ff6b8b', '#ffb8c6', '#ffdfe4', '#ffffff'];
+                
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const firework = document.createElement('div');
+                        firework.classList.add('firework');
+                        firework.style.left = Math.random() * 100 + '%';
+                        firework.style.top = Math.random() * 100 + '%';
+                        firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        container.appendChild(firework);
+                        
+                        setTimeout(() => {
+                            firework.remove();
+                        }, 1000);
+                    }, i * 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
